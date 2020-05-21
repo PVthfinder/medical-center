@@ -694,6 +694,10 @@ h1 {
     padding-left: 21px;
 }
 
+.contacts-menu li {
+    list-style: none;
+}
+
 .contacts-menu li:not(:last-child) {
     margin-bottom: 20px;
 }
