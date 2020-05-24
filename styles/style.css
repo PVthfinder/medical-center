@@ -9,7 +9,7 @@
 }
 
 html,
-bode {
+body {
     height: 100%;
 }
 
@@ -32,10 +32,12 @@ header {
 
 .logo {
     float: left;
+    transition-duration: 1s;
 }
 
 .logo:hover {
     background-color: #eee;
+    transform: rotateZ(3turn);
 }
 
 .header-contacts {
@@ -56,6 +58,21 @@ header {
     align-items: center;
     justify-content: center;
     margin-right: 19px;
+    animation: contact-img 2s infinite;
+}
+
+@keyframes contact-img {
+    0% {
+        transform: scale(0.9);
+    }
+    
+    50% {
+        transform: scale(1.1);
+    }
+    
+    100% {
+        transform: scale(0.9);
+    }
 }
 
 .work-time {
@@ -95,6 +112,7 @@ a {
     font-size: 20px;
     font-weight: 400;
     padding: 0 11px;
+    transition-duration: 0.5s;
 }
 
 .menu-link {
@@ -112,6 +130,10 @@ a {
     letter-spacing: 1.8px;
 }
 
+.social a {
+    transition-duration: 0.5s;
+}
+
 .social-fa {
     color: #191919;
 }
@@ -120,15 +142,66 @@ a {
     color: #aaa;
 }
 
+.menu li:hover{
+    transform: scale(1.1);
+}
+
 .social-fa:hover {
     color: #aaa;
+}
+
+.social a:hover {
+    transform: scale(1.5);
 }
 
 .plan-options {
     padding: 180px 0 0 250px;
     box-sizing: border-box;
     min-height: 640px;
-    background-image: url(../images/bg-fade.png), url(../images/bg-vise.jpg);
+    animation: background 15s infinite;
+    position: relative;
+}
+
+.plan-options img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: fade 15s infinite;
+    z-index: -1;
+}
+
+.plan-options img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.plan-options img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    
+    15%% {
+        opacity: 1;
+    }
+    
+    33.33% {
+        opacity: 1;
+    }
+    
+    45% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 0;
+    }
 }
 
 .plan-options-desc {
@@ -148,7 +221,7 @@ h1 {
 .plan-options-desc p {
     margin-top: 37px;
     color: #3f3f3f;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 17px;
     font-weight: 400;
     line-height: 24px;
@@ -164,12 +237,12 @@ h1 {
     border-radius: 24px;
     margin-top: 42px;
     color: #ffffff;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 18px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.32px;
-    margin-left: calc(50% - 83px);
+    margin-left: calc(50% - 83px);    
 }
 
 .read-more:active {
@@ -180,6 +253,25 @@ h1 {
 .read-more:hover {
     cursor: pointer;
     background-color: #8a9bdc;
+    animation: pulse-button 2s infinite;
+}
+
+@keyframes pulse-button {
+    0% {}
+    
+    25% {
+        transform: scale(1.1);
+    }
+    
+    50% {
+        transform: scale(0.9);
+    }
+    
+    75% {
+        transform: scale(0.9);
+    }
+    
+    100% {}
 }
 
 .mini-logo-block {
@@ -205,7 +297,7 @@ h1 {
 
 .parts {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .part1,
@@ -255,7 +347,7 @@ h1 {
 
 .part p {
     color: #ffffff;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -264,9 +356,8 @@ h1 {
 }
 
 .why-choose-us {
-    padding: 110px 200px 70px;
+    padding: 110px 200px 0;
     box-sizing: border-box;
-    background: url(../images/doctor.jpg) no-repeat bottom;
 }
 
 .why-choose-desc {
@@ -276,7 +367,7 @@ h1 {
 
 .why-choose-desc h2 {
     color: #494949;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 45px;
     font-weight: 700;
     text-align: center;
@@ -284,7 +375,7 @@ h1 {
 
 .why-choose-desc p {
     color: #6a6a6a;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -293,12 +384,11 @@ h1 {
 
 .why-choose-options {
     display: grid;
-    grid-template-areas: "option1 . option2"  
-                         "option3 . option4";
+    grid-template-areas: "option1 option-doc option2"  
+                         "option3 option-doc option4";
     grid-template-columns: 363px 1fr 363px;
     grid-template-rows: auto auto;
-    margin-top: 110px;
-    grid-row-gap: 100px;
+    margin-top: 25px;
 }
 
 .option1 {
@@ -307,6 +397,12 @@ h1 {
 
 .option2 {
     grid-area: option2;
+}
+
+.option-doc {
+    grid-area: option-doc;
+    display: flex;
+    justify-content: center;    
 }
 
 .option3 {
@@ -325,7 +421,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    float: left
+    float: left;
+    margin-top: 90px;
 }
 
 .option h3 {
@@ -336,11 +433,12 @@ h1 {
     letter-spacing: -1.82px;
     margin-top: 20px;
     margin-left: 94px;
+    margin-top: 90px;
 }
 
 .option p {
     color: #6a6a6a;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -355,7 +453,7 @@ h1 {
     background-blend-mode: multiply;
     background-size: cover;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .achievement {
@@ -366,9 +464,86 @@ h1 {
     align-items: center;
 }
 
+.achievement img {
+    transition-duration: 1s;
+}
+
+.achievement1 img:hover {
+    cursor: pointer;
+    transform-origin: center bottom;
+    transform: scale(1.2);    
+}
+
+.achievement2 img:hover {
+    cursor: pointer;
+    animation: pulse 0.8s infinite;   
+}
+
+@keyframes pulse {
+    0% {}
+    
+    48% {
+        transform: scale(1.1);
+    }
+    
+    60% {
+        transform: scale(1.4);
+    }
+    
+    88% {
+        transform: scale(1.1);
+    }
+    
+    100% {}
+}
+
+.achievement3 img:hover {
+    cursor: pointer;
+    animation: move 1s linear infinite;   
+}
+
+@keyframes move {
+    0%{}
+    
+    25% {
+        transform: translate3d(10px, -15px, 0);
+    }
+    
+    50% {
+        transform: translate3d(20px, 10px, 0);
+    }
+    
+    75% {
+        transform: translate3d(-10px, 10px, 0);
+    }
+    
+    100% {}
+}
+
+.achievement4 img:hover {
+    cursor: pointer;
+    animation: breath 3s infinite;   
+}
+
+@keyframes breath {
+    0%{}
+    
+    30% {
+        transform: scale(1.3);
+    }
+    
+    40% {
+        transform: scale(1.3);
+    }
+    
+    60% {}
+    
+    100%{}
+}
+
 .achievement-number{
     color: #ffffff;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 60px;
     font-weight: 500;
     letter-spacing: -1.19px;
@@ -378,7 +553,7 @@ h1 {
 
 .achievement-head {
     color: #ffffff;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 25px;
     font-weight: 500;
     letter-spacing: -1.52px;
@@ -409,7 +584,7 @@ h1 {
 .how-we-works h2,
 .our-creative h2 {
     color: #494949;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 45px;
     font-weight: 700;
 }
@@ -419,7 +594,7 @@ h1 {
 .visiting p,
 .accordeon p{
     color: #6a6a6a;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -428,7 +603,7 @@ h1 {
 
 .visiting h4 {
     color: #6f6f6e;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: -1.21px;
@@ -437,7 +612,7 @@ h1 {
 
 .visiting h5 {
     color: #0087be;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 15px;
     font-weight: 500;
     letter-spacing: -0.38px;
@@ -482,7 +657,7 @@ h1 {
 .active-unit p,
 .unit p {
     color: #ffffff;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 20px;
     font-weight: 500;
     margin: 7px 0 0 60px;
@@ -517,7 +692,7 @@ h1 {
 
 .gallery h2 {
     color: #ffffff;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 45px;
     font-weight: 700;
     text-align: center;
@@ -525,7 +700,7 @@ h1 {
 
 .gallery p {
     color: #ffffff;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -535,9 +710,47 @@ h1 {
 
 .gallery-units {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 35px;
 }
+
+.gallery-unit {
+    position: relative;
+    width: 340px;
+    height: 210px;
+}
+
+.front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    transition: 1s;
+    backface-visibility: hidden;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-image: linear-gradient(to right, #1cd3a2, #30ba8f);
+}
+
+.gallery-unit:hover {
+    cursor: pointer;
+}
+
+.gallery-unit:hover .front {
+    transform: rotateY(180deg);}
+
+.gallery-unit:hover .back {
+    transform: rotateY(360deg);}
 
 .our-team {
     padding: 140px 200px;
@@ -546,7 +759,7 @@ h1 {
 
 .our-team h2 {
     color: #494949;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 45px;
     font-weight: 700;
     text-align: center;
@@ -554,7 +767,7 @@ h1 {
 
 .our-team p {
     color: #6a6a6a;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
@@ -564,13 +777,13 @@ h1 {
 
 .team {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 84px;
 }
 
 .teammate h4 {
     color: #6f6f6e;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 25px;
     font-weight: 500;
     margin-top: 30px;
@@ -578,7 +791,7 @@ h1 {
 
 .teammate p {
     color: #6f6f6e;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 18px;
     font-weight: 500;
     letter-spacing: -1.09px;
@@ -600,10 +813,13 @@ h1 {
 
 .teammate-social-fa {
     color: #0087be;
+    transition-duration: 0.5s;
 }
 
 .teammate-social-fa:hover {
     color: #ccc;
+    
+    transform: scale(1.5);
 }
 
 .consultation {
@@ -613,7 +829,7 @@ h1 {
 
 .consultation p {
     color: #494949;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-size: 30px;
     font-weight: 700;
     float: left;
@@ -629,12 +845,12 @@ h1 {
     padding: 110px 200px;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .contacts h3 {
     color: #ffffff;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 22px;
     font-weight: 700;
     line-height: 24px;
@@ -645,7 +861,7 @@ h1 {
 .get-in-touch p {
     opacity: 0.51;
     color: #ffffff;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -677,17 +893,19 @@ h1 {
 
 .git-fa {
     color: #fff;
+    transition-duration: 0.5s;
 }
 
 .git-fa:hover {
     opacity: 0.51;
+    transform: scale(1.5);
 }
 
 .contacts-menu li a {
     list-style: none;
     opacity: 0.51;
     color: #ffffff;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.4px;
@@ -718,7 +936,7 @@ h1 {
 .form-message {
     opacity: 0.51;
     color: #ffffff;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.4px;
@@ -742,7 +960,7 @@ h1 {
     border: none;
     border-radius: 17.5px;
     color: #ffffff;
-    font-family: Lato;
+    font-family: Lato, sans-serif;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
@@ -752,6 +970,7 @@ h1 {
 .form-submit:hover {
     cursor: pointer;
     background-color: #8a9bdc;
+    animation: pulse-button 2s infinite;
 }
 
 .enquiry-form {
@@ -767,7 +986,7 @@ footer {
 
 footer p {
     color: #615555;
-    font-family: "Open Sans";
+    font-family: "Open Sans", sans-serif;
     font-size: 13px;
     font-weight: 400;
     line-height: 24px;
