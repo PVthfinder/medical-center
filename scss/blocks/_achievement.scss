@@ -1,0 +1,42 @@
+.achievement {
+    padding: 0 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    @media (max-width: 1270px) {
+        padding: 0 20px;
+    }
+    
+    &__icon {
+    transition-duration: 1s;
+    }    
+    
+    &__number{
+    color: $white;
+    font-family: $font-Montserrat;
+    font-size: $font-size-achev-num;
+    font-weight: 500;
+    letter-spacing: -1.19px;
+    line-height: 60px;
+    margin-top: 45px;
+    }
+    
+    &__text {
+    color: $white;
+    font-family: $font-Montserrat;
+    font-size: $font-size-achev-text;
+    font-weight: 500;
+    letter-spacing: -1.52px;
+    text-align: center;
+    line-height: 25px;
+    }
+    
+    &__line {
+    width: 84px;
+    height: 6px;
+    background-color: $white;
+    margin: 26px 0;
+    }
+}

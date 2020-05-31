@@ -1,0 +1,75 @@
+.teammate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    
+    &__name {
+        color: $subheading-color;
+        font-family: $font-Montserrat;
+        font-size: $font-size-large-text;
+        font-weight: 500;
+        margin-top: 30px;        
+    }
+    
+    &__position {
+        color: $subheading-color;
+        font-family: $font-Montserrat;
+        font-size: $font-size-main-text;
+        font-weight: 500;
+        letter-spacing: -1.09px;
+        margin-top: 15px;
+    }
+    
+    &__img {
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+    
+    &__foto {
+        &:hover .teammate__img {
+            transform: translateY(-150px) scale(0);
+        }   
+        
+        &:hover .teammate__register {
+            transform: scale(1);
+            transform-origin: center bottom;
+        }
+        
+        &:hover .register-btn {
+            transform: scale(1);
+        }
+    }
+    
+    &__register {
+        width: 279px;
+        height: 279px;
+        position: absolute;
+        top: 0;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right, #1cd3a2, #30ba8f);
+        border-radius: 50%;
+        transform: scale(0);
+        transition-duration: 0.5s;
+    }
+    
+    &__socials {
+        margin-top: 30px;
+        font-size: $font-size-large-text;
+        font-weight: 400;
+        letter-spacing: 1.8px;
+    }
+    
+    &__social-fa {
+        color: $darker-blue;
+        transition-duration: 0.5s;
+        
+        &:hover {
+            color: $link-hover-color;    
+            transform: scale(1.5);
+        }
+    }
+}

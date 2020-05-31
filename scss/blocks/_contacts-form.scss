@@ -1,0 +1,23 @@
+.contacts-form {
+    &__name,
+    &__phone,
+    &__message {
+        display: block;
+        opacity: 0.51;
+        color: $white;
+        font-family: $font-Open-Sans;
+        font-size: $font-size-text;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        border: none;
+        border-bottom: 1px solid #c2c2c2;
+        background: none;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+    }
+    
+    &__message {
+        resize: none;
+        height: 100px;
+    }
+}

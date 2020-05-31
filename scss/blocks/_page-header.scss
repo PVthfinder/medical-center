@@ -1,0 +1,33 @@
+.page-header {
+    padding: 37px 185px 36px 200px;
+    box-sizing: border-box;
+    
+    @media (max-width: 1470px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    @media (max-width: 1020px) {
+        padding: 37px 50px 36px 50px;
+    }
+    
+    @media (max-width: 740px) {
+        padding: 37px 10px 36px 10px;
+    }
+    
+    &__contacts{
+        float: right;
+        font-family: $font-Open-Sans;
+        
+        div {
+            float: left;
+            
+            &:not(:last-child) {
+                @media (max-width: 1240px) {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }    
+}

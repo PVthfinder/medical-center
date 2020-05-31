@@ -1,0 +1,21 @@
+.get-in-touch {
+    @media (max-width: 620px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__heading {
+        color: $white;
+        font-family: $font-Open-Sans;
+        font-size: $font-size-large-text;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.55px;
+        margin-bottom: 70px;        
+    }
+    
+    &__item {
+        margin-bottom: 60px;
+    }
+}

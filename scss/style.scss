@@ -1,0 +1,64 @@
+@import "variables";
+
+@import "blocks/accordeon";
+@import "blocks/achievement";
+@import "blocks/achievements";
+@import "blocks/card";
+@import "blocks/consultation";
+@import "blocks/contacts";
+@import "blocks/contacts-form";
+@import "blocks/enquiry-form";
+@import "blocks/fa-caret-right";
+@import "blocks/feautures";
+@import "blocks/form-submit";
+@import "blocks/gallery";
+@import "blocks/get-in-touch";
+@import "blocks/git-unit";
+@import "blocks/how-we-works";
+@import "blocks/how-we-works-item";
+@import "blocks/logo";
+@import "blocks/main-info";
+@import "blocks/main-nav";
+@import "blocks/our-creative";
+@import "blocks/our-servises";
+@import "blocks/our-team";
+@import "blocks/page-footer";
+@import "blocks/page-header";
+@import "blocks/plan-options";
+@import "blocks/professional-option";
+@import "blocks/quick-links";
+@import "blocks/read-more";
+@import "blocks/register-btn";
+@import "blocks/socials";
+@import "blocks/team";
+@import "blocks/teammate";
+@import "blocks/why-choose-us";
+@import "blocks/works-creative";
+
+html, body {
+  min-height: 100%;
+}
+
+.clearfix {
+    content: '';
+    clear: both;
+    display: block;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1600px;
+    min-height: 100%;
+}
+
+hr {
+    margin-top: 20px;
+    margin-left: 14px;
+    width: 98%;
+    height: 2px;
+    background-color: $main-gray;
+    opacity: 0.31;
+}
+
+a {
+    text-decoration: none;
+}

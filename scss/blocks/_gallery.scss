@@ -1,0 +1,75 @@
+.gallery {
+    padding: 94px 250px;
+    box-sizing: border-box;
+    background: linear-gradient(#38b69e, #38b69e), url(../images/bg-hall.jpg) no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    
+    @media (max-width: 1580px) {
+        padding: 94px 100px;
+    }
+    
+    @media (max-width: 1320px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    @media (max-width: 950px) {
+        padding: 50px 30px;
+    }
+    
+    &__heading {
+        color: $white;
+        font-family: $font-Montserrat;
+        font-size: $font-size-main-heading;
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    &__text {
+        color: $white;
+        font-family: $font-Open-Sans;
+        font-size: $font-size-text;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: center;
+        margin: 35px 0 54px;
+    }
+    
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 35px;
+        
+        @media (max-width: 1320px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: 950px) {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    &__item {
+        position: relative;
+        width: 340px;
+        height: 210px;
+        
+        @media (max-width: 370px) {
+            width: 300px;
+        }
+        
+        &:hover {
+            cursor: pointer;
+        }
+        
+        &:hover .card__front {
+            transform: rotateY(180deg);
+        }
+        
+        &:hover .card__back {
+            transform: rotateY(360deg);
+        }
+    }
+}

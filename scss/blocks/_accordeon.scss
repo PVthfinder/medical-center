@@ -1,0 +1,90 @@
+.accordeon {
+    &__content{
+        color: $text-color;
+        font-family: $font-Open-Sans;
+        font-size: $font-size-text;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: justify;        
+    }
+    
+    &__btn {
+        width: 40px;
+        height: 40px;
+        background-color: $white;
+        border-radius: 50%;
+        border: none;
+        float: left;
+        font-size: $font-size-large-text;
+        padding-left: 5px;
+    
+        &--active {
+            width: 40px;
+            height: 40px;
+            background-color: $white;
+            border-radius: 50%;
+            border: none;
+            float: left;
+            font-size: $font-size-large-text;
+            padding-left: 5px;
+        }
+    }
+    
+    &__unit {
+        width: 422px;
+        height: 54px;
+        border-radius: 27px;
+        padding: 7px 8px;
+        box-sizing: border-box;
+        cursor: pointer;
+        background-color: $lighter-gray;
+        
+        @media (max-width: 1020px) {
+           width: 300px; 
+        }
+        
+        @media (max-width: 930px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        &--active{
+            width: 422px;
+            height: 54px;
+            border-radius: 27px;
+            padding: 7px 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+            background-color: $darker-blue;
+            
+            @media (max-width: 1020px) {
+                width: 300px;
+            }
+            
+            &:hover button {
+                background-color: $main-gray;
+            }
+        }
+        
+        &:not(:last-child) {
+            margin-bottom: 12px;
+        }
+        
+        &:hover button {
+            background-color: $main-gray;
+        }
+    }
+    
+    &__heading {
+        color: $white;
+        font-family: $font-Montserrat;
+        font-size: $font-size-subheading;
+        font-weight: 500;
+        margin: 7px 0 0 60px;    
+    }
+    
+    &__content {
+        margin: 15px 0 40px;
+    }
+}

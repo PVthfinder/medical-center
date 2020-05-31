@@ -1,0 +1,21 @@
+.contacts {
+    background-color: $contacts-background-color;
+    padding: 110px 200px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    @media (max-width: 1350px) {
+        padding: 100px 50px;
+    }
+    
+    @media (max-width: 1020px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 50px;
+    }
+    
+    @media (max-width: 620px) {
+        padding: 50px 30px;
+        grid-template-columns: 1fr;
+    }
+}

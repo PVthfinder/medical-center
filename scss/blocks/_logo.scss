@@ -1,0 +1,19 @@
+.logo {
+    &:hover {
+        background-color: $main-background-color;
+        transform: rotateZ(3turn);
+        
+        @media (max-width: 1470px) {
+            transform: none;
+        }
+    }
+    
+    &--header {
+        float: left;
+        transition-duration: 1s;
+        
+        @media (max-width: 1470px) {
+            margin-bottom: 35px;
+        }
+    }
+}

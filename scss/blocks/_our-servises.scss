@@ -1,0 +1,49 @@
+.our-services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    @media (max-width: 1020px) {
+        display: block;
+    }
+    
+    @media (max-width: 620px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__heading {
+        color: $white;
+        font-family: $font-Open-Sans;
+        font-size: $font-size-large-text;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0.55px;
+        margin-bottom: 70px;        
+    }
+    
+    &__link {
+        opacity: 0.51;
+        color: $white;
+        font-family: $font-Open-Sans;
+        font-size: $font-size-text;
+        font-weight: 400;
+        letter-spacing: 0.4px;
+        padding-left: 21px;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+    
+    &__menu {
+        li {
+            list-style: none;
+            
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

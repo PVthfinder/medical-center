@@ -1,0 +1,23 @@
+.works-creative {
+    padding: 100px 210px;
+    display: grid;
+    grid-template-columns: 335px 335px 407px;
+    grid-template-rows: auto auto auto;
+    grid-gap: 50px;
+    
+    @media (max-width: 1580px) {
+         padding: 100px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+    }
+    
+    @media (max-width: 1350px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 40px;
+    }
+    
+    @media (max-width: 930px) {
+        grid-template-columns: 1fr;
+        padding: 50px 20px;
+    }
+}

@@ -1,0 +1,37 @@
+.main-nav {
+    @media (max-width: 600px) {
+        display: none;
+    }
+    
+    &__list {
+    list-style: none;
+    float: left;
+        
+        li {
+        display: inline-block;
+        font-family: $font-Nexa;
+        font-size: $font-size-subheading;
+        font-weight: 400;
+        padding: 0 11px;
+        transition-duration: 0.5s;
+            
+            &:hover{
+            transform: scale(1.1);
+            }
+        }
+    }   
+    
+    &__link {
+    color: $link-color;
+        
+        &:hover {
+        color: $link-hover-color;
+        }
+    }
+    
+    &--header {
+    margin-top: 33px;
+    float: left;
+    }    
+    
+}

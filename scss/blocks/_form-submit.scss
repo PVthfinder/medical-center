@@ -1,0 +1,20 @@
+.form-submit {
+    width: 166px;
+    height: 47px;
+    box-shadow: -4px 12px 40px rgba(0, 1, 1, 0.2);
+    background-color: $darker-blue;
+    border: none;
+    border-radius: 24px;
+    color: $white;
+    font-family: $font-Lato;
+    font-size: $font-size-btn;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.32px;
+    
+    &:hover {
+        cursor: pointer;
+        background-color: $button-hover-color;
+        animation: pulse-button 2s infinite;
+    }
+}
