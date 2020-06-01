@@ -1,0 +1,112 @@
+.nav-xs {
+    display: none;
+    position: relative;
+    
+    @media (max-width: 660px) {
+        display: block;
+        float: left;
+    }
+    
+    &__toggle {
+        opacity: 0;
+        
+        &:checked ~ .nav-xs__list {
+            visibility: visible;
+            left: 0;
+        }
+        
+        &:checked ~ .nav-xs__btn > span {
+            transform: rotate(45deg);
+        }
+        
+        &:checked ~ .nav-xs__btn > span::before {
+            top: 0;
+            transform: rotate(0);
+        }
+        
+        &:checked ~ .nav-xs__btn > span::after {
+            top: 0;
+            transform: rotate(90deg);
+        }
+    }
+    
+    &__btn {
+        float: left;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        z-index: 1;
+        transition-duration: .25s;
+        
+        span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $main-gray;
+            transition-duration: .25s;
+            
+            &::before {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: $main-gray;
+                content: '';
+                top: -8px;
+                transition-duration: .25s;
+            }
+            
+            &::after {
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                background-color: $main-gray;
+                content: '';
+                top: 8px;
+                transition-duration: .25s;
+            }
+        }
+    }
+    
+    &__list {
+        position: absolute;
+        display: block;
+        position: fixed;
+        visibility: hidden;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        margin: 0;
+        padding: 80px 0;
+        list-style: none;
+        text-align: center;
+        background-color: $main-background-color;
+                
+        li {
+            padding: 10px 0;
+            text-align: center;
+        }
+    }
+    
+    &__link {
+        display: block;
+        padding: 0 11px;
+        color: $link-color;
+        font-family: $font-Nexa;
+        font-size: $font-size-subheading;
+        font-weight: 400;
+        transition-duration: .25s;
+        
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+}
