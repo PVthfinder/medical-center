@@ -35,5 +35,11 @@
             align-items: center;
             grid-row: auto;
         }
+        
+        img {
+            @media (max-width: 380px) {
+                width: 250px;
+            }
+        }
     }
 }

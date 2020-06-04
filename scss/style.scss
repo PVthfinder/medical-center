@@ -19,6 +19,8 @@
 @import "blocks/logo";
 @import "blocks/main-info";
 @import "blocks/main-nav";
+@import "blocks/nav-socials-xs";
+@import "blocks/nav-xs";
 @import "blocks/our-creative";
 @import "blocks/our-servises";
 @import "blocks/our-team";
@@ -34,6 +36,11 @@
 @import "blocks/teammate";
 @import "blocks/why-choose-us";
 @import "blocks/works-creative";
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 html, body {
   min-height: 100%;
